@@ -15,18 +15,22 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 
 <body>
   <h3>Daftar Mahasiswa</h3>
+  <a href="tambah.php">Tambah Data Mahasiswa</a>
+  <br><br>
+
   <table border="1" cellpadding="10" cellspacing="10">
     <tr>
       <th>#</th>
       <th>Gambar</th>
       <th>NIM</th>
       <th>Nama Mahasiswa</th>
-
       <th>Aksi</th>
     </tr>
-    <?php foreach ($mahasiswa as $mhs) : ?>
+    <?php
+    $i = 1;
+    foreach ($mahasiswa as $mhs) : ?>
       <tr>
-        <td><?= $mhs['id']; ?></td>
+        <td><?= $i++; ?></td>
         <td><img src="img/<?= $mhs['gambar']; ?>" width="60"></td>
         <td><?= $mhs['nim']; ?></td>
         <td><?= $mhs['nama']; ?></td>
